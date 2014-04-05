@@ -1,3 +1,8 @@
+//MLLCAL002
+//Calvin Mills
+//Assignment 2
+
+
 #include <iostream>
 #include <vector>
 #include "node.h"
@@ -7,42 +12,30 @@ using namespace std;
 int main()
 {
     {
-    parsetree p;
-    parsetree::tree_iterator root;
-    parsetree::tree_iterator j;
+	//test case(sorry it's so bad, ran out of time :( )
+		parsetree tree;
+		parsetree::tree_iterator root_iterator;
+		parsetree::tree_iterator iterator1;
 
-    node n(4);
-    root = p.insert(root, n);
+		node node1(3);
+		root = tree.insert(root_iterator, node1);
 
-    node x3("x3");
-    j = p.insert(root, x3);
+		node first("6");
+		iterator1 = tree.insert(root_iterator, first);
 
-    node eq("=") ;
+		node plus("+") ;
 
-    j = p.insert(root, eq);
+		iterator1 = tree.insert(root_iterator, plus);
 
-    node m(3) ;
+		node second("5") ;
 
-    parsetree::tree_iterator exp;
-    exp = p.insert(root, m);
+		iterator1 = tree.insert(root_iterator, second);
+		root.print_tree();
 
-    node y("y");
-    j = p.insert(exp, y);
-
-    node plus("+");
-    j = p.insert(exp, plus);
-
-    node three("3");
-    j = p.insert(exp, three);
-
-    node colon(";");
-    j = p.insert(root, colon);
-
-    cout << endl << endl << endl << endl;
-    root.print_tree();
 
     }
     node::print_counts(std::cout, "node");
 
 }
+
 
